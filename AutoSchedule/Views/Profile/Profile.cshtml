@@ -1,0 +1,27 @@
+@model AutoSchedule.Models.ViewModels.Profile.ProfileViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+    var Name = @Model.Name ?? "нет";
+    var Address = @Model.Address ?? "Пусто";
+    var Organization = @Model.Organization ?? "Пусто";
+    var PhoneNumber = @Model.PhoneNumber;
+}
+
+<div class="profile-container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Данные профиля</h5>
+                    <ul>
+                        <li class="list-group-item">@Name</li>
+                        <li class="list-group-item">@Organization</li>
+                        <li class="list-group-item">@Address</li>
+                        <li class="list-group-item">@PhoneNumber</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@model AutoSchedule.Models.ViewModels.Profile.ProfileViewModel;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация</title>
+</head>
+<body>
+    <div class="container">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <h3>Профиль</h3>
+
+            <label>ФИО пользователя:</label>
+            <div>@Model.Name</div>
+            <label>Образовательное учреждение:</label>
+            <div>@Model.Name</div>
+            <label>Номер телефона образовательного учреждения:</label>
+            <div>@Model.PhoneNumber</div>
+            <label>Адресс образовательного учреждения:</label>
+            <div>@Model.Address</div>
+        }
+
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <h2 class="h2">Добро пожаловать на наш сайт по автоматическому составлению расписания!</h2>
+            <h4 class="h4">
+                Откройте новые возможности для эффективного планирования с минимальными усилиями.
+                Укажите свои предпочтения, а наш инструмент сгенерирует оптимальное расписание, учитывая все важные факторы.
+                Гибкость и легкость в настройке позволят вам максимально эффективно использовать свое время.
+                Присоединяйтесь к нам сейчас и освободите себя от рутины составления расписания!
+            </h4>
+
+            <button class="btn btn-success"><a asp-controller="Account" asp-action="Login" style="text-decoration: none; color: white">Войти</a></button>
+        }
+    </div>
+</body>
+</html>

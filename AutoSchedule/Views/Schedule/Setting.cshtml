@@ -1,0 +1,27 @@
+@model AutoSchedule.Models.ViewModels.Schedule.ScheduleViewModel;
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="container-setting">
+    <form method="post" asp-controller="Schedule" asp-action="CreateSchedule">
+        <label asp-for="SchoolDays">Выберите количевство учебных дней: </label>
+        <select asp-for="SchoolDays">
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+        </select>
+        <label asp-for="LessonsCount">Выберите количество уроков в день: </label>
+        <select asp-for="LessonsCount">
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+        </select>
+        <button type="submit">CreateSchedule</button>
+    </form>
+</div>

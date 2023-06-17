@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoSchedule</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/AutoSchedule.styles.css" />
+    <link rel="stylesheet" href="~/css/sidebar.css" />
+    <link rel="stylesheet" href="~/css/modal.css" />
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li>
+                    <a class="logo">
+                        <img src="~/img/logo.png" alt="">
+                        <span class="nav-item">Schedule</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Home" asp-action="Index">
+                        <i class="fas fa-home"></i>
+                        <span class="nav-item">Главная</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Teacher" asp-action="GetTeachers">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span class="nav-item">Список учителей</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Audience" asp-action="GetAudiences">
+                        <i class="fas fa-door-open"></i>
+                        <span class="nav-item">Список аудитории</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Load" asp-action="GetLoad">
+                        <i class="fas fa-cog"></i>
+                        <span class="nav-item">Список нагрузки</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Schedule" asp-action="CreateSchedule">
+                        <i class="fas fa-calendar custom"></i>
+                        <span class="nav-item">Расписание</span>
+                    </a>
+                </li>
+                <li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <form method="post" asp-controller="Account" asp-action="Logout">
+                            <a class="account">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <input asp-controller="Account" asp-action="Logout" class="nav-item" type="submit" value="Выход" />
+                            </a>
+                        </form>
+                    }
+                    else
+                    {
+                        <a class="account" asp-controller="Account" asp-action="Login">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span class="nav-item">Войти</span>
+                        </a>
+                    }
+                </li>
+            </ul>
+        </nav>
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/jquery/jquery.min.js" ></script>
+    <script src="~/js/modal.js"></script>
+
+    @await RenderSectionAsync("pageScripts", required: false)
+</body>
+</html>

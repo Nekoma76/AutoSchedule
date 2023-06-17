@@ -1,0 +1,36 @@
+@model AutoSchedule.Models.ViewModels.Schedule.ScheduleViewModel;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="~/css/account.css" />
+</head>
+<body>
+    <div class="container">
+        <h3>создать расписание</h3>
+
+        <form method="post" asp-controller="Schedule" asp-action="CreateSchedule">
+            <label asp-for="SchoolDays">Выберите количевство учебных дней: </label>
+            <select asp-for="SchoolDays">
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+            </select>
+            <label asp-for="LessonsCount">Выберите количество уроков в день: </label>
+            <select asp-for="LessonsCount">
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+            </select>
+            <button class="submit" type="submit">Создать распиание</button>
+        </form>
+    </div>
+</body>
+</html>

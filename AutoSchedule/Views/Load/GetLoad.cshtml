@@ -1,0 +1,45 @@
+@model IEnumerable<AutoSchedule.Models.ViewModels.Load.LoadViewModel>
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="row" style="margin: 15px">
+    <div class="col-ms-12">
+        <form asp-action="GetLoadList" asp-controller="Load" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="form-control" name="formFile" type="file"/>
+                    <button class="btn btn-primary" type="submit">Добавить список нагрузки</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div style="margin: 15px;"></div>
+    <div class="card col-md-12">
+        <table class="table table-striped">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">Класс</th>
+                    <th scope="col">Смена</th>
+                    <th scope="col">Часы</th>
+                    <th scope="col">Предмет</th>
+                    <th scope="col">Учитель</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var load in @Model)
+                {
+                    <tr>
+                        <td>@load.ClassName</td>
+                        <td>@load.Shift</td>
+                        <td>@load.Hours</td>
+                        <td>@load.Lesson</td>
+                        <td>@load.TeacherName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

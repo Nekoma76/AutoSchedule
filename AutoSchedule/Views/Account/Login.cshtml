@@ -1,0 +1,27 @@
+﻿@model AutoSchedule.Models.ViewModels.Account.LoginViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="~/css/account.css" />
+</head>
+<body>
+    <h3>Войти аккаунт</h3>
+
+    <form method="post" asp-controller="Account" asp-action="Login">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" type="Email" placeholder="Введите Email" />
+        <label asp-for="Password">Password</label>
+        <input asp-for="Password" autocomplete="new-password" type="password" placeholder="Пароль" />
+        <button class="submit">Отправить</button>
+    </form>
+
+    <div class="btn_block">
+        <a asp-controller="Account" asp-action="Register"><button class="btn">Регистрация</button></a>
+        <a><button class="btn active">Вход</button></a>
+    </div>
+</body>
+</html>

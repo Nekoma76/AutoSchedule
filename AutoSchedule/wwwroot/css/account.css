@@ -1,0 +1,80 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+html * {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(219, 219, 219);
+}
+
+h3{
+    text-align: center;
+    color: rgb(70, 70, 70);
+    text-transform: uppercase;
+}
+
+form {
+    margin-top: 2rem;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px 0;
+    font-family: 600;
+    color: rgb(89, 89, 89);
+}
+
+input {
+    width: 90%;
+    padding: 3px 0;
+    border-bottom: solid 2px #e9b00c;
+}
+
+input::placeholder {
+    color: rgb(193, 190, 190);
+}
+
+button{
+    margin: 2rem 1rem 0 0;
+    padding: 5px 2rem;
+    border-radius: 20px;
+    border: solid 2px rgb(130, 130, 130);
+    cursor: pointer;
+    color: rgb(130, 130, 130);
+    background: transparent;
+}
+
+button a{
+    color: rgb(130, 130, 130);
+}
+
+.submit {
+    width: 90%;
+    background: #e9b00c;
+    color: #fff;
+    border: solid 2px #e9b00c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+submit:hover{
+    background: rgba(233, 176, 0, 0.8);
+}
+
+.active, .btn:hover{
+    color: #fff;
+    background: rgb(130, 130, 130);
+    border: solid 2px rgb(130, 130, 130);
+    transition: 0.5s;
+}

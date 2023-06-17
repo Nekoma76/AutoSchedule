@@ -1,0 +1,28 @@
+@model AutoSchedule.Models.ViewModels.Profile.ProfileViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="~/css/account.css" />
+</head>
+<body>
+    <div class="container">
+        <h3>Профиль</h3>
+
+        <form method="post" asp-controller="Profile" asp-action="EditProfile">
+            <label asp-for="Name">Введите имя*</label>
+            <input asp-for="Name" type="text" placeholder="Имя" />
+            <label asp-for="Organization">Введите учебное заведение*</label>
+            <input asp-for="Organization" type="text" placeholder="Учебное заведение" /> 
+            <label asp-for="PhoneNumber">Введите номер телефона учебного заведения</label>
+            <input asp-for="PhoneNumber" type="text" placeholder="Номер" /> 
+            <label asp-for="Address">Введите адресс</label>
+            <input asp-for="Address" type="text" placeholder="Адресс" /> 
+            <button class="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>

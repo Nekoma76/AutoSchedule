@@ -1,0 +1,29 @@
+﻿@model AutoSchedule.Models.ViewModels.Account.RegisterViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="~/css/account.css" />
+</head>
+<body>
+    <h3>Создать аккаунт</h3>
+
+    <form method="post" asp-controller="Account" asp-action="Register">
+        <label for="#">Email</label>
+        <input asp-for="Email" type="Email" placeholder="Введите Email" />
+        <label for="#">Password</label>
+        <input asp-for="Password" autocomplete="new-password" type="password" placeholder="Пароль" />
+        <label>Подтвердите пароль</label>
+        <input asp-for="PasswordConfirm" autocomplete="new-password" type="password" placeholder="Подтвердите пароль" />
+        <button class="submit">Отправить</button>
+    </form>
+
+    <div class="btn_block">
+        <a><button class="btn active">Регистрация</button></a>
+        <a asp-controller="Account" asp-action="Login"><button class="btn">Вход</button></a>
+    </div>
+</body>
+</html>

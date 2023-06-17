@@ -1,0 +1,41 @@
+@model IEnumerable<AutoSchedule.Models.ViewModels.Audience.AudienceViewModel>
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="row" style="margin: 15px">
+    <div class="col-ms-12">
+        <form asp-action="GetAudienceList" asp-controller="Audience" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="form-control" name="formFile" type="file"/>
+                    <button class="btn btn-primary" type="submit">Добавить список аудитории</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div style="margin: 15px;"></div>
+<div class="card col-md-12">
+    <table class="table table-striped">
+        <thead class="table-light">
+        <tr>
+            <th scope="col">Номер</th>
+            <th scope="col">Количество мест</th>
+            <th scope="col">Предмет</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var audience in @Model)
+        {
+            <tr>
+                <td>@audience.Number</td>
+                <td>@audience.SeatsCount</td>
+                <td>@audience.Lesson</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

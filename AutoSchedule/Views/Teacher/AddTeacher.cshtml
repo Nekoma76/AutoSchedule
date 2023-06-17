@@ -1,0 +1,29 @@
+@model AutoSchedule.Models.ViewModels.Teacher.TeacherViewModel;
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Добавить учителя";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добавить учителя</title>
+    <link rel="stylesheet" href="~/css/account.css" />
+</head>
+<body>
+    <div class="container">
+        <h3>Добавить учителя</h3>
+
+        <form method="post" asp-controller="Teacher" asp-action="AddTeacher">
+            <label asp-for="Name">Введите ФИО Учителя*</label>
+            <input asp-for="Name" type="text" placeholder="ФИО" />
+            <label asp-for="Lesson">Введите предмет*</label>
+            <input asp-for="Lesson" type="text" placeholder="Предмет" /> 
+            <button class="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>

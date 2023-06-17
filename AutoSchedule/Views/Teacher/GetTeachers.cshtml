@@ -1,0 +1,76 @@
+@model IEnumerable<AutoSchedule.Models.ViewModels.Teacher.TeacherViewModel>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Спсиок учителей";
+}
+
+
+<div class="row" style="margin: 15px">
+    <div class="col-ms-12">
+        <button class="btn btn-primary">
+            <a asp-controller="Teacher" asp-action="AddTeacher" 
+                style="text-decoration: none; color: white;">Добавить учителя</a>
+        </button>
+
+        <form asp-action="AddTeacherList" asp-controller="Teacher" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="form-control" name="formFile" type="file"/>
+                    <button class="btn btn-primary" type="submit">Добавить список учителей</button>
+                </div>
+            </div>
+        </form>
+    <!--*form asp-controller="Teacher" asp-action="AddTeacherList" 
+        method="post" name="formFile" enctype="multipart/form-data">
+        <label class="input-file">
+            <input type="file" name="file">
+            <span class="input-file-btn">Выберите файл</span>           
+            <span class="input-file-text">Максимум 10мб</span>
+        </label>
+        <button type="submit">Отправить</button>-->
+
+        <!--<button class="btn btn-success" id="open-pop-up">Добавить список учителей</button>-->
+    </div>
+
+<!--
+    <div class="pop-up" id="pop-up">
+        <div class="pop-up-container">
+            <div class="pop-up-body" id="pop-up-body">
+                <h1>Список учителей</h1>
+                <form asp-controller="Teacher" asp-action="AddTeacherList" 
+                    method="post" name="formFile" enctype="multipart/form-data">
+                    <label class="input-file">
+                        <input type="file" name="file">
+                        <span class="input-file-btn">Выберите файл</span>           
+                        <span class="input-file-text">Максимум 10мб</span>
+                    </label>
+                    <button type="submit">Отправить</button>
+                </form>
+                <div class="pop-up-close" id="pop-up-close">&#10006</div>
+            </div>
+        </div>
+    </div>
+-->
+</div>
+
+<div style="margin: 15px;"></div>
+<div class="card col-md-12">
+    <table class="table table-striped">
+        <thead class="table-light">
+        <tr>
+            <th scope="col">Имя</th>
+            <th scope="col">Предмет</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var teacher in @Model)
+        {
+            <tr>
+                <td>@teacher.Name</td>
+                <td>@teacher.Lesson</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
